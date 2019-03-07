@@ -1,0 +1,35 @@
+<datasource-http-settings current="ctrl.current" suggest-url="http://localhost:9090">
+</datasource-http-settings>
+
+<div class="gf-form-group">
+  <div class="gf-form-inline">
+    <div class="gf-form">
+      <span class="gf-form-label width-8">Scrape 间隔</span>
+      <input type="text" class="gf-form-input width-8" ng-model="ctrl.current.jsonData.timeInterval" spellcheck='false' placeholder="15s"></input>
+      <info-popover mode="right-absolute">
+        将此设置为Prometheus配置文件中定义的全局Scrape间隔。这将用作…的下限步骤查询参数
+      </info-popover>
+    </div>
+  </div>
+
+  <div class="gf-form-inline">
+    <div class="gf-form">
+      <span class="gf-form-label width-8">查询超时</span>
+      <input type="text" class="gf-form-input width-8" ng-model="ctrl.current.jsonData.queryTimeout" spellcheck='false' placeholder="60s"></input>
+      <info-popover mode="right-absolute">
+        设置Prometheus查询超时
+      </info-popover>
+    </div>
+  </div>
+
+  <div class="gf-form">
+    <label class="gf-form-label width-8">HTTP 方法</label>
+    <div class="gf-form-select-wrapper width-8 gf-form-select-wrapper--has-help-icon">
+      <select class="gf-form-input" ng-model="ctrl.current.jsonData.httpMethod" ng-options="method for method in ['GET', 'POST']"></select>
+      <info-popover mode="right-absolute">
+        指定用于查询Prometheus的HTTP方法。(POST仅在Prometheus >= v2.1.0中可用)
+      </info-popover>
+    </div>
+  </div>
+</div>
+
